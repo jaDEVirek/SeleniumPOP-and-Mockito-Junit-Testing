@@ -16,7 +16,7 @@ public class MenuOP extends AbstractPagesConfiguration {
     @FindBy(xpath = "//ul[@id='primary-menu']/li[1]/a/span/span/span")
     private WebElement homePage;
 
-    @FindBy(xpath = "//ul[@id='primary-menu']/li[8]/a/span/span/span")
+    @FindBy(xpath = "//ul[@id='primary-menu']/li[7]/a/span/span")
     private WebElement demoSites;
 
     @FindBy(xpath = "//*[@id='primary-menu']//*[contains(text(), 'Automation Practice Form')]")
@@ -31,7 +31,8 @@ public class MenuOP extends AbstractPagesConfiguration {
     @FindBy(css = "#primary-menu .menu-item-23300")
     private WebElement iFramePractice;
 
-    @FindBy(css = "#primary-menu .menu-item-22593")
+
+    @FindBy(xpath = "//*[@id='primary-menu']//*[contains(text(), 'Automation Practice Switch Windows')]")
     private WebElement windowSwitchingPractice;
 
 

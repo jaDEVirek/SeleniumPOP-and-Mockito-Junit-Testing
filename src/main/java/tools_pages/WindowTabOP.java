@@ -3,6 +3,7 @@ package tools_pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.AbstractPagesConfiguration;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class WindowTabOP extends AbstractPagesConfiguration {
 
-    @FindBy(id = "button1")
+    @FindBy(css = "button[onClick='newBrwWin()']")
     private WebElement browserButton;
 
     @FindBy(xpath = "//div[@id='content']/p[3]/button")
@@ -26,12 +27,13 @@ public class WindowTabOP extends AbstractPagesConfiguration {
     @FindBy(css = "body")
     private WebElement bodyTextArea;
 
-    @FindBy(xpath = "//ul[@id='primary-menu']/li[5]/a/span/span/span")
+    @FindBy(xpath = "//ul[@id='primary-menu']/li[6]/a/span/span")
     private WebElement forumLink;
 
 
     public WindowTabOP(WebDriverWait waitDriver, WebDriver webDriver) {
         super(waitDriver, webDriver);
+        PageFactory.initElements(webDriver, this);
     }
 
     public WindowTabOP handleBrowseButton() {
@@ -59,8 +61,6 @@ public class WindowTabOP extends AbstractPagesConfiguration {
         switchDriverToWindow(getWindowHandles().get(1));
         waitUntilElementBeClickable(forumLink)
                 .click();
-        switchDriverToWindow(getWindowHandles().get(2));
-        webDriver.close();
         switchToDefaultAndCloseWindow();
         return this;
     }

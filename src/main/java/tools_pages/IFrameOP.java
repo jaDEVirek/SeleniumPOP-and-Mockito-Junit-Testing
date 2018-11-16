@@ -9,7 +9,7 @@ import utils.AbstractPagesConfiguration;
 
 public class IFrameOP extends AbstractPagesConfiguration {
 
-    @FindBy(xpath = "//ul[@id='primary-menu']/li[7]/a/span/span/span")
+    @FindBy(xpath = "//*[@id='primary-menu']//*[contains(text(), 'DEMO SITES')]")
     private WebElement demoSiteLabel;
 
     @FindBy(xpath = "//ul[@id='primary-menu']/li[7]/ul/li[7]/a/span/span")
