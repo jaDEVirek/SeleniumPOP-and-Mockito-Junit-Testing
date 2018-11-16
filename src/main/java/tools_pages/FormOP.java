@@ -117,7 +117,7 @@ public class FormOP extends AbstractPagesConfiguration {
         toolsList.stream()
                 .filter(t -> t.getAttribute("value").equalsIgnoreCase("Selenium Webdriver") || t.getAttribute("value").equalsIgnoreCase("Selenium IDE"))
                 .collect(Collectors.toList())
-                .forEach(WebElement::click);
+                .forEach(t->waitUntilElementBeClickable(t).click());
         return this;
     }
 
